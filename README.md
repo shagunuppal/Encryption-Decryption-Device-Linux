@@ -26,7 +26,7 @@ Thereafter, subsequent read() calls result in reading blocks of decrypted blocks
 <img src = "decdevice.png">
 </center>
 
-Following are the commands to first create the encryption and decryption devices on a Linux System : <br>
+Following are the commands to first create the encryption and decryption devices on a Linux System : <br><br>
 <b>
 mknod /dev/encdev c 150 1 <br>
 chmod a+r+w /dev/encdev <br>
