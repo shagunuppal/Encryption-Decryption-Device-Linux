@@ -26,19 +26,23 @@ Thereafter, subsequent read() calls result in reading blocks of decrypted blocks
 <img src = "decdevice.png">
 </center>
 
-Following are the commands to first create the encryption and decryption devices on a Linux System :
-mknod /dev/encdev c 150 1
-chmod a+r+w /dev/encdev
-cd enc
-make
-insmod encdev.ko
+Following are the commands to first create the encryption and decryption devices on a Linux System : <br>
+<b>
+mknod /dev/encdev c 150 1 <br>
+chmod a+r+w /dev/encdev <br>
+cd enc <br>
+make <br>
+insmod encdev.ko <br>
+<br>
+mknod /dev/decdev c 160 1 <br>
+chmod a+r+w /dev/decdev <br>
+cd dec <br>
+make <br>
+insmod decdev.ko <br>
+</b>
 
-mknod /dev/decdev c 160 1
-chmod a+r+w /dev/decdev
-cd dec
-make
-insmod decdev.ko
-
-The test program can be used to check the functioning of the devices. Name of the file that is to be encrypted and decrypted must be passed as an argument on the comand line, for example some.txt here. 
-gcc test.c
-./a.out some.txt
+The test program can be used to check the functioning of the devices. Name of the file that is to be encrypted and decrypted must be passed as an argument on the comand line, for example some.txt here. <br>
+<b>
+gcc test.c <br>
+./a.out some.txt <br>
+</b>
