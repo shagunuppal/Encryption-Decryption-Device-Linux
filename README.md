@@ -17,7 +17,7 @@ Subsequent read()s result in reading off the encrypted blocks, until an EOF is e
 <img src = "encdevice.png">
 </center>
 <br>
-<b> The Decryption Deevice (decdev) : </b><br><br>
+<b> The Decryption Device (decdev) : </b><br><br>
 Just like encdev, there is a decdev device file which is used to decrement an encrypted file. Similar to encdev, there are functions like open() and write() which helps in writing blocks of encrypted file to the device. The first block of 128-bits (16 bytes) happens to be the key (the same is one used for encryption
 and decryption). The subsequent blocks written are the cipher blocks (encrypted previously via the encdev). Here again the last block is signaled via the EOF character. Each of these blocks is decrypted and stored in some internal data structure.
 Thereafter, subsequent read() calls result in reading blocks of decrypted blocks. The final block is again signaled through reading off the previously written EOF character.
